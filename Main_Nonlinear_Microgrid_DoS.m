@@ -9,7 +9,7 @@ params.TB = 0.1; params.Tac = 0.2;
 params.C_bat = 500; params.R_th = 2; params.C_th = 8; params.COP = 2.5; 
 
 % 2. Simulation Setup
-Tsim = 200; Ts = 0.01; t = 0:Ts:Tsim; N = length(t);
+Tsim = 200; Ts = 0.001; t = 0:Ts:Tsim; N = length(t);
 X_baseline = zeros(8, N); % [dw, Pm, Pv, PB, SoC, Tin, PAC, int_dw]
 X_proposed = zeros(8, N);
 
