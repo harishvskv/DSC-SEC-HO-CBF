@@ -2,8 +2,6 @@
 % Simulates the Cyber-Physical Microgrid under DoS Attack
 % Demonstrates the transition from vulnerable WAN-PI control to DSC-sEC.
 
-clear; clc;
-
 % 1. Load Nonlinear System Parameters
 params.M = 8.0; params.D = 1.2; params.gamma = 1.5; % Nonlinear load exponent
 params.Tt = 0.3; params.Tg = 0.2; params.R = 0.04;
