@@ -6,6 +6,8 @@ To protect proprietary research extensions and multi-area grid topologies, this 
 2. The High-Order Control Barrier Function (HO-CBF) Quadratic Program.
 3. The stochastic Monte Carlo robustness validation framework.
 
+In order to demonstrate the scalabality and universatality, you may enter the paper's values or the values of your own interest. please note that the SEC-HO-CBF Frequency/ACE regulatore works optimally well for low inertia values aswell.
+
 ### Files Included:
 * `Main_Nonlinear_Microgrid_DoS.m`: The primary simulation script executing the switching logic between WAN (baseline) and Edge (DSC-sEC) under DoS.
 * `Plant_Dynamics_Nonlinear.m`: The highly nonlinear state-space representation of the CPMS (Swing equations, BESS, AIAC thermal dynamics).
