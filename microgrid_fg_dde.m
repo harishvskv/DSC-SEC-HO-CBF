@@ -1,6 +1,6 @@
 function [f,g] = microgrid_fg_dde(x, d, params, UFLS_flag)
     % STATES
-    dw = x(1); Pm = x(2); Pv = x(3); PB = x(4); S = x(5); Tin = x(6); PAC = x(7); int_dw = x(8);
+    df = x(1); Pm = x(2); Pv = x(3); PB = x(4); S = x(5); Tin = x(6); PAC = x(7); int_df = x(8);
     
     % DISTURBANCES
     Pres = d(1); 
@@ -14,8 +14,8 @@ function [f,g] = microgrid_fg_dde(x, d, params, UFLS_flag)
     f = zeros(8,1);
     g = zeros(8,2);
     
-    dw_bound = max(dw, -0.5);
-    P_load = P_L0 * (1 + params.D * dw_bound)^params.gamma;
+    df_bound = max(dw, -0.5);
+    P_load = P_L0 * (1 + params.D * df_bound)^params.gamma;
     
     %% Swing Equation
     f(1) = (1/params.M) * (Pm + Pres + PB - PAC - P_load);
@@ -25,7 +25,7 @@ function [f,g] = microgrid_fg_dde(x, d, params, UFLS_flag)
     
     %% Governor (Primary + AGC interaction)
     Pref = params.P_ref; 
-    f(3) = (Pref - Pv - (1/params.R)*dw) / params.Tg;
+    f(3) = (Pref - Pv - (1/params.R)*df) / params.Tg;
     
     %% Battery Power
     f(4) = -(1/params.TB) * PB;
@@ -42,5 +42,5 @@ function [f,g] = microgrid_fg_dde(x, d, params, UFLS_flag)
     g(7,2) = 1/params.Tac;
     
     %% Area Control Error (Integral for AGC)
-    f(8) = dw; 
+    f(8) = df; 
 end
