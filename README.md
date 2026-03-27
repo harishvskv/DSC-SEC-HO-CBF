@@ -1,6 +1,6 @@
 # DSC-SEC-HO-CBF
 Safety-Critical Edge-Control for Cyber-Physical Microgrids Under DoS Attacks: A Time-Delay High-Order CBF Approach
-This repository contains the core MATLAB implementation of the DSC-sEC framework for Cyber-Physical Microgrid Systems (CPMS) under Denial-of-Service (DoS) attacks, as presented in our IEEE Transactions manuscript.
+This repository contains the core MATLAB implementation of the DSC-sEC framework for Cyber-Physical Microgrid Systems (CPMS) under Denial-of-Service (DoS) attacks, as presented in Manuscript ID	TSG-00739-2026.
 To protect proprietary research extensions and multi-area grid topologies, this repository provides a **representative nonlinear isolated microgrid model**. It demonstrates the fundamental implementation of:
 1. The nonlinear delay-aware plant dynamics.
 2. The High-Order Control Barrier Function (HO-CBF) Quadratic Program.
